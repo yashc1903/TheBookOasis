@@ -1,0 +1,31 @@
+<form>
+h1> Sign in </h1>
+
+<legend>Connect & Collect...I</legend>
+
+<table>
+
+<tr>
+
+<td><input type="text" required minlength="4" placeholder="Username"></td>
+
+</tr>
+
+<tr>
+
+<td><input type="Password" name="pwd" required minlength="8" placeholder="Password"></td>
+
+</tr>
+
+<tr>
+
+<td><input type="checkbox" name="model"value="Remember me">Remember me </td>
+
+<td><p> Forgot password?</p></td>
+
+</tr>
+
+</table>
+
+<button type="submit">Sign In</button>
+</form>
