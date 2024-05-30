@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LOgin() {
+function Login() {
   return (
     <div>
         {/* create the form here  */}
@@ -8,4 +8,4 @@ function LOgin() {
   )
 }
 
-export default LOgin
+export default Login
