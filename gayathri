@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+    <h1>Sign Up</h1>
+    <p>Connect and Collect...!</p>
+    <fieldset>
+        <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="Email">Enter Your Email: <input id="Email" name="Email" type="email" required /></label>
+        <label for="Username">UserName: <input id="UserName" name="UserName" type="Password" required /></label>
+        <label for="Password">Password: <input id="Password" name="Password" type="Password" pattern="[a-z0-5]{8,}" required /></label>
+        <label for="Re-enter"> Re-enter: <input id="Re-enter" name="Re-enter " type="Re-enter" pattern="[a-z0-5]{8,}" required /></label>
+      </fieldset>
+            <label for="terms-and-conditions">
+        <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> I accept the terms and conditions...<a href="/login">Click here</a>
+        <br>
+      </label>
+      <input type="Sign Up" value="Sign Up" />
+      <div class="Sign in-link">
+      <p>Already having an account? <a href="/login">Sign in</a></p>
+       </form>
+  
