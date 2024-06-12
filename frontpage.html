@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .filter-form, .books-list {
+            background: #fff;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #ddd;
+        }
+        .filter-form h2, .books-list h2 {
+            margin-top: 0;
+        }
+        .filter-form div {
+            margin-bottom: 15px;
+        }
+        .filter-form label {
+            display: block;
+        }
+        .filter-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+        }
+        .filter-form button {
+            padding: 10px 20px;
+            background: #333;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .books-list .book-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .books-list .book-item img {
+            width: 100px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        .books-list .book-item .book-info {
+            flex: 1;
+        }
+        .books-list .book-item .book-info h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Bookstore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Upload Book</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="filter-form">
+            <h2>Filter Books</h2>
+            <form action="/filter-books" method="GET">
+                <div>
+                    <label for="filterCategory">Filter by Category:</label>
+                    <select id="filterCategory" name="filterCategory">
+                        <option value="">All Categories</option>
+                        <option value="standard">Standard</option>
+                        <option value="novel">Novel</option>
+                        <option value="comics">Comics</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Filter</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="books-list">
+            <h2>Books</h2>
+            <div class="book-item" data-category="novel">
+                <img src="Book 1.jpeg" alt="Book 1">
+                <div class="book-info">
+                    <h3>Intermediate chemistry first year book</h3>
+                    <p>Publisher: Telugu Akademi</p>
+                </div>
+            </div>
+            <div class="book-item" data-category="comics">
+                <img src="Book 2.jpeg" alt="Book 2">
+                <div class="book-info">
+                    <h3>C programming book</h3>
+                    <p>Published date:  27 March 2020 <br>
+                        Edition: 2nd Edition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.filter-form form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const filterCategory = document.getElementById('filterCategory').value;
+            const bookItems = document.querySelectorAll('.books-list .book-item');
+
+            bookItems.forEach(function(bookItem) {
+                if (filterCategory === '' || bookItem.getAttribute('data-category') === filterCategory) {
+                    bookItem.style.display = 'flex';
+                } else {
+                    bookItem.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

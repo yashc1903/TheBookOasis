@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .upload-form {
+            background: #fff;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #ddd;
+        }
+        .upload-form h2 {
+            margin-top: 0;
+        }
+        .upload-form div {
+            margin-bottom: 15px;
+        }
+        .upload-form label {
+            display: block;
+        }
+        .upload-form input[type="text"],
+        .upload-form input[type="file"],
+        .upload-form textarea,
+        .upload-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+        }
+        .upload-form button {
+            padding: 10px 20px;
+            background: #333;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Bookstore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Upload Book</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="upload-form">
+            <h2>Upload Book</h2>
+            <form action="/submit-book" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="bookTitle">Book Title:</label>
+                    <input type="text" id="bookTitle" name="bookTitle" required>
+                </div>
+                <div>
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" name="bookAuthor" required>
+                </div>
+                <div>
+                    <label for="bookImage">Upload Book Image:</label>
+                    <input type="file" id="bookImage" name="bookImage" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="bookDescription">Book Description:</label>
+                    <textarea id="bookDescription" name="bookDescription" rows="5" required></textarea>
+                </div>
+                <div>
+                    <label for="bookCategory">Category:</label>
+                    <select id="bookCategory" name="bookCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="standard">Standard</option>
+                        <option value="novel">Novel</option>
+                        <option value="comics">Comics</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Upload Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
